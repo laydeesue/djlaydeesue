@@ -29,7 +29,7 @@
         /* --- HERO SEKCIA (Úvod) --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('68619321_2302744033135451_6140377604785438720_n.jpg'); /* NOVÁ HERO FOTKA */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('68619321_2302744033135451_6140377604785438720_n.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -80,6 +80,7 @@
             letter-spacing: 2px;
             background: transparent;
             cursor: pointer;
+            border-radius: 5px;
         }
 
         .hero-btn:hover {
@@ -105,6 +106,133 @@
             font-size: 1.1rem;
             color: var(--text-gray);
             margin-bottom: 40px;
+        }
+
+        /* --- TRANSFORMATION SECTION --- */
+        .transformation-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .transformation-title {
+            font-size: 3rem;
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .transformation-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+        }
+
+        .evolution-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .evolution-container {
+                gap: 20px;
+                flex-direction: column;
+            }
+        }
+
+        .evolution-box {
+            flex: 1;
+            min-width: 280px;
+            background: #111;
+            padding: 40px;
+            border-radius: 10px;
+            border: 2px solid #333;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .evolution-box:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 30px rgba(255, 0, 85, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .evolution-old {
+            border-left: 4px solid #666;
+        }
+
+        .evolution-new {
+            border-right: 4px solid var(--primary-color);
+            box-shadow: inset 0 0 30px rgba(255, 0, 85, 0.1);
+        }
+
+        .evolution-logo-wrapper {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+        }
+
+        .evolution-logo {
+            max-width: 100%;
+            max-height: 120px;
+            width: auto;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 85, 0.3));
+        }
+
+        .evolution-box h3 {
+            font-size: 2rem;
+            margin: 15px 0;
+            color: var(--text-light);
+        }
+
+        .evolution-text {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+        }
+
+        .evolution-description {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .evolution-arrow {
+            font-size: 3rem;
+            color: var(--primary-color);
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        .evolution-arrow span {
+            display: block;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 0, 85, 0.5);
+        }
+
+        .evolution-arrow p {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         /* --- HUDBA & VIDEO --- */
@@ -276,6 +404,40 @@
         </p>
     </section>
 
+    <!-- TRANSFORMATION SECTION -->
+    <section class="transformation-section">
+        <h2 class="transformation-title">The Evolution</h2>
+        <p class="transformation-subtitle">From LayDee Sue to DJ ZANA - A Journey of Growth</p>
+        
+        <div class="evolution-container">
+            <!-- OLD LOGO -->
+            <div class="evolution-box evolution-old">
+                <div class="evolution-logo-wrapper">
+                    <img src="logo-laydee-sue.jpg" alt="LayDee Sue Logo" class="evolution-logo">
+                </div>
+                <h3>LayDee Sue</h3>
+                <p class="evolution-text">2015-2025</p>
+                <p class="evolution-description">The foundation. Years of experience, passion, and growth behind the decks. From Sundance Festival to international venues.</p>
+            </div>
+
+            <!-- ARROW / EVOLUTION SYMBOL -->
+            <div class="evolution-arrow">
+                <span>→</span>
+                <p>Evolution</p>
+            </div>
+
+            <!-- NEW LOGO -->
+            <div class="evolution-box evolution-new">
+                <div class="evolution-logo-wrapper">
+                    <img src="logo-zana.jpg" alt="ZANA Logo" class="evolution-logo">
+                </div>
+                <h3>DJ ZANA</h3>
+                <p class="evolution-text">2026 →</p>
+                <p class="evolution-description">The rebirth. Maturity, depth, and refined artistry. A sophisticated sound blending Afro House, Tech House, and Deep Tech.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- VIDEOS SECTION -->
     <section id="videos" class="media-section">
         <div class="container">
@@ -320,23 +482,23 @@
             <img src="IMG_5647.jpg" alt="DJ ZANA Smile">
             <img src="IMG_5657.jpg" alt="DJ ZANA Headphones">
             <img src="68619321_2302744033135451_6140377604785438720_n.jpg" alt="DJ ZANA Live at Sundance">
-            <img src="1.jpg" alt="DJ ZANA 1">
-<img src="2.jpg" alt="DJ ZANA 2">
-<img src="3.jpg" alt="DJ ZANA 3">
-<img src="4.jpg" alt="DJ ZANA 4">
-<img src="5.jpg" alt="DJ ZANA 5">
-<img src="6.jpg" alt="DJ ZANA 6">
-<img src="7.jpg" alt="DJ ZANA 7">
-<img src="8.jpg" alt="DJ ZANA 8">
-<img src="9.jpg" alt="DJ ZANA 9">
-<img src="10.jpg" alt="DJ ZANA 10">
-<img src="11.jpg" alt="DJ ZANA 11">
-<img src="12.jpg" alt="DJ ZANA 12">
-<img src="13.jpg" alt="DJ ZANA 13">
-<img src="14.jpg" alt="DJ ZANA 14">
-<img src="15.jpg" alt="DJ ZANA 15">
-<img src="16.jpg" alt="DJ ZANA 16">
-<img src="17.jpg" alt="DJ ZANA 17">
+            <img src="foto-1.jpg" alt="DJ ZANA 1">
+            <img src="foto-2.jpg" alt="DJ ZANA 2">
+            <img src="foto-3.jpg" alt="DJ ZANA 3">
+            <img src="foto-4.jpg" alt="DJ ZANA 4">
+            <img src="foto-5.jpg" alt="DJ ZANA 5">
+            <img src="foto-6.jpg" alt="DJ ZANA 6">
+            <img src="foto-7.jpg" alt="DJ ZANA 7">
+            <img src="foto-8.jpg" alt="DJ ZANA 8">
+            <img src="foto-9.jpg" alt="DJ ZANA 9">
+            <img src="foto-10.jpg" alt="DJ ZANA 10">
+            <img src="foto-11.jpg" alt="DJ ZANA 11">
+            <img src="foto-12.jpg" alt="DJ ZANA 12">
+            <img src="foto-13.jpg" alt="DJ ZANA 13">
+            <img src="foto-14.jpg" alt="DJ ZANA 14">
+            <img src="foto-15.jpg" alt="DJ ZANA 15">
+            <img src="foto-16.jpg" alt="DJ ZANA 16">
+            <img src="foto-17.jpg" alt="DJ ZANA 17">
         </div>
     </section>
 
@@ -359,4 +521,3 @@
 
 </body>
 </html>
-
