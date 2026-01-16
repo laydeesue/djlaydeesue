@@ -40,7 +40,17 @@
             text-align: center;
             position: relative;
         }
-
+        
+   /* --- OPRAVA PRE IPHONE A MOBILY --- */
+        @media (max-width: 1024px) {
+            .hero {
+                /* Na dotykových zariadeniach vypneme fixed, lebo to robí chyby */
+                background-attachment: scroll; 
+                
+                /* Uistíme sa, že obrázok je vycentrovaný */
+                background-position: center center;
+            }
+        }
         .hero-content {
             z-index: 2;
             animation: fadeInDown 1.5s ease;
@@ -508,6 +518,7 @@
         <p style="margin-top:50px; color:#444; font-size:0.8rem;">
         </p>
     </footer>
+
 
 
 
